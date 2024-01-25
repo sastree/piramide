@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 100px;
+        }
+        /* #E0B859 */
+        body {
+            height: 80vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            
+        }
+        .piramide {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: rotateX(10deg);
+            transform-style: preserve-3d;
+            animation: anim 5s linear infinite; 
+        }
+        @keyframes anim {
+            to {
+                transform: rotateX(10deg) rotateY(-360deg);
+            }
+       
+        }
+        .cara {
+            position: absolute;
+            overflow: hidden;
+            width: 0;
+            height: 0;
+            border-right: 100px solid transparent;
+            border-top: 150px solid transparent;
+            border-left: 100px solid transparent;
+            border-bottom: 150px solid #DEB85C;
+            transform-origin: bottom center;
+     
+        }
+        
+        .front {
+            transform: translateZ(1em) rotateX(42deg) ;
+            border-bottom: 150px solid #ceaa55;
+
+        }
+        .back {
+            transform: translateZ(-1em) rotateX(-42deg);
+            border-bottom: 150px solid #ceaa55;
+
+        }
+        .left {
+            transform: translateX(-1em) rotateY(90deg) rotateX(-42deg) ;
+
+        }
+        .right {
+            transform: translateX(1em) rotateY(-90deg) rotateX(-42deg);
+
+        }
+        .base {
+            height: 200px;
+            width: 200px;
+            position: absolute;
+            overflow: hidden;
+            background-color: #a78945;
+            transform: rotateX(90deg) translateZ(-150px);
+        }
+        
+      
+
+    </style>
+</head>
+<body>
+    <div class="piramide">
+        <div class="left cara"></div>
+        <div class="right cara"></div>
+        <div class="front cara"></div>
+        <div class="back cara"></div>
+        <div class="bottom base"></div>
+    </div>
+</body>
+</html>
